@@ -1,0 +1,80 @@
+version: '3'
+services:
+ server1:
+   build:
+     dockerfile: Dockerfile
+     context: ./server
+   volumes:
+    - /app/node_modules
+    - ./server:/app
+   environment: #&environment
+     - DESIRED_RATE_TX=1
+     #- AMOUNT_DATA_BYTES=1000000
+     - TEST_TIME_MINUTES=0.016666666
+     #- MAX_GAS_PER_TX=400000000 #not necessary to change this unless you change your BLOCKPERIODSECONDS.
+     - NUMBER_OF_CONTAINERS=1
+     - STORE_DATA=TRUE
+     - IP_FROM=35.247.241.166
+     - IP_TO_1=35.197.76.152
+     - IP_TO_2=34.74.56.215
+     - PORT_FROM=4545
+     - PORT_TO_1=4545
+     - PORT_TO_2=4545
+     - ORION_PUB_KEY_FROM=bKWqTPee92mHSj+X5EdIuOjv2XZgg32RrgAM/+yvUW4=
+     - ORION_PUB_KEY_TO_1=XjQ2ZERWty+3dgBcqk3KSFFSwDbgYqrV9ia2/Udzl2M=
+     - ORION_PUB_KEY_TO_2=eriiUlyYxQ1BxNjnq6HNMtVM5JOxgi2e+tDSKaxPx3I=
+     - ID=BOOTNODE3
+     - NETWORK_ID=648529
+     - PRIVACY_GROUP_ID=b/p1E7SkMuPjfiOOA5Coce/e4osTtv+KksfNptIkXfU=
+     - CONTRACT_ADDRESS=0xc497b8cadebdf5b693e6aa1d51fd59915c017cfa
+
+  # server2:
+  #   build:
+  #     dockerfile: Dockerfile
+  #     context: ./server
+  #   volumes:
+  #     - /app/node_modules
+  #     - ./server:/app
+  #   environment: #&environment
+  #     - DESIRED_RATE_TX=2
+  #     #- AMOUNT_DATA_BYTES=1000000
+  #     - TEST_TIME_MINUTES=1
+  #     #- MAX_GAS_PER_TX=400000000 #not necessary to change this unless you change your BLOCKPERIODSECONDS.
+  #     - NUMBER_OF_CONTAINERS=1
+  #     - STORE_DATA=TRUE
+  #     - IP_FROM=34.74.56.215
+  #     - IP_TO_1=35.197.76.152
+  #     - IP_TO_2=35.247.241.166
+  #     - PORT_FROM=4545
+  #     - PORT_TO_1=4545
+  #     - PORT_TO_2=4545
+  #     - ORION_PUB_KEY_FROM=eriiUlyYxQ1BxNjnq6HNMtVM5JOxgi2e+tDSKaxPx3I=
+  #     - ORION_PUB_KEY_TO_1=XjQ2ZERWty+3dgBcqk3KSFFSwDbgYqrV9ia2/Udzl2M=
+  #     - ORION_PUB_KEY_TO_2=bKWqTPee92mHSj+X5EdIuOjv2XZgg32RrgAM/+yvUW4=
+  #     - ID=BID-REGULAR1
+
+#  server3: # to aduana 3
+#    build:
+#      dockerfile: Dockerfile
+#      context: ./server
+#    volumes:
+#      - /app/node_modules
+#      - ./server:/app
+#    environment: #&environment
+#      - DESIRED_RATE_TX=2 #2 #5 #10
+#      #- AMOUNT_DATA_BYTES=1000000
+#      - TEST_TIME_MINUTES=0.033333
+#      #- MAX_GAS_PER_TX=400000000 #not necessary to change this unless you change your BLOCKPERIODSECONDS.
+#      - NUMBER_OF_CONTAINERS=1
+#      - STORE_DATA=TRUE
+#      - IP_FROM=35.238.88.205
+#      - IP_TO_1=34.69.160.105
+#      - IP_TO_2=34.73.6.106
+#      - PORT_FROM=4545
+#      - PORT_TO_1=4545
+#      - PORT_TO_2=4545
+#      - ORION_PUB_KEY_FROM=yiCk+G2gSGo65eWycKL8SKl00JCxywrFqn6XmT5Q8mo=
+#      - ORION_PUB_KEY_TO_1=+jrMwl39oYE/tGwvbWhA0Eic5lhU8N6hLylXRzyqYz4=
+#      - ORION_PUB_KEY_TO_2=O7Ke1bTmdkFrOpDtQD9yEL+hi7A/ZimcacseNAPZeHU=
+#      - ID=ADUANA3
+#      - NETWORK_ID=648529
